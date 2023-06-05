@@ -1,18 +1,27 @@
-import 'package:calculadora_multiuso/app/modules/water_consumption/water_controller.dart';
+import 'package:calculadora_multiuso/app/modules/widgets/drawer_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-class WaterResultPage extends GetView<WaterController> {
+class WaterResultPage extends StatefulWidget {
   const WaterResultPage({super.key});
 
+  @override
+  State<WaterResultPage> createState() => _WaterResultPageState();
+}
+
+class _WaterResultPageState extends State<WaterResultPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('WaterResultPage'),
+        title: const Text("Resultado"),
       ),
-      body: const SafeArea(
-        child: Text('WaterResultController'),
+      drawer: const DrawerWidget(),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Container(),
+          ],
+        ),
       ),
     );
   }
