@@ -23,66 +23,66 @@ class WaterPage extends GetView<WaterController> {
                   minHeight: constrains.maxHeight,
                 ),
                 child: IntrinsicHeight(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Bem vindo(a) à Calculadora de Consumo Diário de Água!",
-                              maxLines: 2,
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                                fontSize: 18,
+                  child: Form(
+                    key: controller.formKey,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          const Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Bem vindo(a) à Calculadora de Consumo Diário de Água!",
+                                maxLines: 2,
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                  fontSize: 18,
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(top: 10, bottom: 15),
-                              child: Text(
-                                "Aqui você saberá quanto deve consumir de água diariamente.",
+                              Padding(
+                                padding: EdgeInsets.only(top: 10, bottom: 15),
+                                child: Text(
+                                  "Aqui você saberá quanto deve consumir de água diariamente.",
+                                  maxLines: 2,
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                "Por favor, forneça as informaçoes abaixo:",
                                 maxLines: 2,
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   color: Colors.black,
-                                  fontSize: 16,
+                                  fontSize: 14,
                                 ),
                               ),
-                            ),
-                            Text(
-                              "Por favor, forneça as informaçoes abaixo:",
-                              maxLines: 2,
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                color: Colors.black,
-                                fontSize: 14,
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Text(
+                                "Informe seu peso:",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const Text(
-                              "Informe seu peso:",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            SizedBox(
-                              width: 125,
-                              child: Form(
-                                key: controller.formKey,
+                              const SizedBox(height: 10),
+                              SizedBox(
+                                width: 125,
                                 child: TextFormField(
                                   controller: controller.controllerForm,
                                   keyboardType:
@@ -107,23 +107,23 @@ class WaterPage extends GetView<WaterController> {
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                        Center(
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              elevation: 8,
-                              fixedSize: const Size(200, 40),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                            ),
-                            onPressed: () => controller.sendInfo(),
-                            child: const Text("Confirmar"),
+                            ],
                           ),
-                        ),
-                      ],
+                          Center(
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                elevation: 8,
+                                fixedSize: const Size(200, 40),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                              ),
+                              onPressed: () => controller.sendInfo(),
+                              child: const Text("Confirmar"),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

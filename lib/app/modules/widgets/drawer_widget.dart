@@ -16,13 +16,16 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       {
         "title": "Consumo diário de água",
         "img": "assets/imgs/water-bottle.png",
-        "route": Get.toNamed(AppRoutes.consumo_agua)
       },
       {
         "title": "Calculadora IMC",
         "img": "assets/imgs/bmi.png",
-        "route": null,
       }
+    ];
+
+    List routes = [
+      AppRoutes.consumo_agua,
+      AppRoutes.agua_resultado,
     ];
 
     return Drawer(
@@ -55,7 +58,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    onTap: () => infos[index]["route"],
+                    onTap: () => Get.toNamed(routes[index]),
                   ),
                 );
               },

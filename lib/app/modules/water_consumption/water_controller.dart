@@ -14,4 +14,5 @@ class WaterController extends GetxController {
       Get.toNamed(AppRoutes.agua_resultado);
     }
   }
+
 }
